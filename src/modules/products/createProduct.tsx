@@ -13,12 +13,14 @@ const CreateProduct = () => {
     const create = async (producto: product) => {
       try {
         // Realizar solicitud HTTP aquí
-        const response = await axios.post(urlProducts, producto);
+        await axios.post(urlProducts, producto);
         ShowAlert({title: 'Atención', text: 'Producto creado correctamente', icon: 'success'} );
         navigate('/products');        
       } catch (error) {
         // Manejar errores, si los hay
         setErrores(error.response.data);
+        console.error('Error en la petición:', errores);
+        ShowAlert({title: 'Lo Sentimos', text: 'No se pudo crear el producto', icon: 'error'} );
       }
     }
 

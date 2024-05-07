@@ -79,13 +79,13 @@ export default function LstProduct() {
                             <div className="border rounded-1 h-100 d-flex flex-column justify-content-between pb-3">
                                 <div className="overflow-hidden">
                                     <div className="position-relative rounded-top overflow-hidden text-center mt-2" style={{ minHeight: 500, minWidth: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <a className="d-block" href="#" onClick={() => openModal(producto.id)}>
+                                        <button className="btn btn-link d-block" onClick={() => openModal(producto.id)}>
                                             <img className="img-fluid rounded-top" src={producto.image} alt="" style={{ maxHeight: 500, maxWidth: 300}} />
-                                        </a>
+                                        </button>
                                     </div>
                                     <div className="p-3">
-                                        <h5 className="fs-9"><a className="text-1100" href="#" onClick={() => openModal(producto.id)}>{producto.title}</a></h5>
-                                        <p className="fs-10 mb-3"><a className="text-500" href="#!">{producto.category}</a></p>
+                                        <h5 className="fs-9"><button className="btn btn-link text-1100"  onClick={() => openModal(producto.id)}>{producto.title}</button></h5>
+                                        <p className="fs-10 mb-3"><button className="btn btn-link text-500">{producto.category}</button></p>
                                         <h5 className="fs-md-7 text-warning mb-0 d-flex align-items-center mb-3"> ${producto.price}
                                         </h5>
                                         <p className="fs-10 mb-1">Costo de envio: <strong>$50</strong></p>
@@ -111,18 +111,5 @@ export default function LstProduct() {
           </div>
           <DetailProduct isOpen={modalIsOpen} closeModal={closeModal} id={modalId} />         
         </>        
-    );
-}
-
-// Definir el componente ColumnFilter
-function ColumnFilter({ column }) {
-    const { filterValue, setFilter } = column;
-
-    return (
-        <input className="form-control"
-            value={filterValue || ''}
-            onChange={e => setFilter(e.target.value)}
-            placeholder={`Filtrar ${column.Header}`}
-        />
     );
 }

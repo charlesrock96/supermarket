@@ -87,7 +87,7 @@ export default function IndexUser() {
 
     const handleDelete = async (id: number) => {
         try {
-            const respuesta = await axios.delete(`${urlUsers}/${id}`);
+            await axios.delete(`${urlUsers}/${id}`);
             ShowAlert({title: 'Atención', text: 'Registro eliminado.', icon: 'success'} );
         } catch (error) {
             console.error('Error al cargar datos:', error);

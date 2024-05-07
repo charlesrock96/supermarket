@@ -22,20 +22,21 @@ export default function EditProduct() {
                 setProducto(respuesta.data);
                 console.log(respuesta.data);
             } catch (error) {
-                console.error('Error al cargar datos:', error);
+                setErrores(error.response.data);
+                console.error('Error al cargar datos:', errores);
             } finally {
                 setLoading(false); // Se establece loading en false independientemente del resultado de la solicitud
             }
         };
 
         fetchData();
-    }, [id]); // La dependencia vacía asegura que esta solicitud solo se realice una vez al montar el componente
+    }, [id, errores]); // La dependencia vacía asegura que esta solicitud solo se realice una vez al montar el componente
 
     
     const edit = async (producto: product) => {
       try {
         // Realizar solicitud HTTP aquí
-        const response = await axios.put(`${urlProducts}/${producto.id}`, producto);
+        await axios.put(`${urlProducts}/${producto.id}`, producto);
         ShowAlert({title: 'Atención', text: 'Producto editado correctamente', icon: 'success'} );
         navigate('/products');        
       } catch (error) {

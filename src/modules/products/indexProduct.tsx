@@ -107,7 +107,7 @@ export default function IndexProduct() {
 
     const handleDelete = async (id: number) => {
         try {
-            const respuesta = await axios.delete(`${urlProducts}/${id}`);
+            await axios.delete(`${urlProducts}/${id}`);
             ShowAlert({title: 'Atención', text: 'Registro eliminado.', icon: 'success'} );
         } catch (error) {
             console.error('Error al cargar datos:', error);

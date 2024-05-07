@@ -39,12 +39,13 @@ export default function EditUser() {
     const edit = async (user: user) => {
         try {
             // Realizar solicitud HTTP aquí
-            const response = await axios.put(`${urlUsers}/${user.id}`, user);
+            await axios.put(`${urlUsers}/${user.id}`, user);
             ShowAlert({title: 'Atención', text: 'Usuario editado correctamente', icon: 'success'} );
             navigate('/users');        
         } catch (error) {
             // Manejar errores, si los hay
             setErrores(error.response.data);
+            console.error('Error en la petición:', errores);
         }
     }
 

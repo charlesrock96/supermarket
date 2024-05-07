@@ -17,12 +17,13 @@ const CreateUser = () => {
   const create = async (user: user) => {
     try {
       // Realizar solicitud HTTP aquí
-      const response = await axios.post(urlUsers, user);
+      await axios.post(urlUsers, user);
       ShowAlert({title: 'Atención', text: 'Usuario creado correctamente', icon: 'success'} );
       navigate('/users');
     } catch (error) {
       // Manejar errores, si los hay
       setErrores(error.response.data);
+      console.error('Error en la petición:', errores);
     }
   }
 

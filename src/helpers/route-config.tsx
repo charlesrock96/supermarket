@@ -17,12 +17,4 @@ const rutas = [
     { path: '/users/create', component: <CreateUser />, authorized: true},
 ];
 
-function Home() {
-    return (
-      <div>
-        <h1>Home</h1>
-      </div>
-    );
-  }
-
 export default rutas;

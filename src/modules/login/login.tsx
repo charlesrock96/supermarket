@@ -24,12 +24,6 @@ const Login = () => {
     password: Yup.string().required('Este campo es requerido')
   });
 
-  // Cuando se ejecuta por primera vez se debe borrar el token y limpiar los claims del contexto
-  useEffect(() => {
-    localStorage.removeItem('token');
-    update([]);
-  }, []);
-
   const handleSubmit = async (credenciales: credential) => {
     try{
     const response = await axios.post(urlLogin, credenciales);
@@ -57,12 +51,12 @@ const Login = () => {
             <div className="bg-holder bg-auth-card-shape" style={divStyle}>
             </div>
 
-            <div className="z-1 position-relative"><a className="link-light mb-4 font-sans-serif fs-5 d-inline-block fw-bolder" href="#">falcon</a>
+            <div className="z-1 position-relative"><span className="link-light mb-4 font-sans-serif fs-5 d-inline-block fw-bolder">falcon</span>
             <p className="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
             </div>
           </div>
-          <div className="mt-3 mb-4 mt-md-4 mb-md-5" data-bs-theme="light">
-            <p className="text-white">No tienes una cuenta?<br/><a className="text-decoration-underline link-light" href="#" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'No tenemos personal disponible para procesar tu solicitud', icon: 'error'} )}>Empezar!</a></p>
+          <div className="mt-3 mb-4 mt-md-4 mb-md-5" data-bs-theme="light"> 
+            <p className="text-white">No tienes una cuenta?<br/><button className="btn btn-link text-decoration-underline link-light" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'No tenemos personal disponible para procesar tu solicitud', icon: 'error'} )}>Empezar!</button></p>
           </div>
           </div>
           <div className="col-md-7 d-flex flex-center">
@@ -87,7 +81,7 @@ const Login = () => {
               <ErrorMessage name="password" component="div" className="text-danger" />
               </div>
               <div className="row flex-between-center">
-              <div className="col-auto"><a className="fs-10" href="#" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'Lamentamos tu perdida', icon: 'error'} )}>perdiste tu contraseña?</a></div>
+              <div className="col-auto"><button className="btn btn-link fs-10" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'Lamentamos tu perdida', icon: 'error'} )}>perdiste tu contraseña?</button></div>
               </div>
               <div className="mb-3">
               <button className="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Iniciar sesión</button>
@@ -98,8 +92,8 @@ const Login = () => {
             o inicia sesión con
             </div>
             <div className="row g-2 mt-2">
-            <div className="col-sm-6"><a className="btn btn-outline-google-plus btn-sm d-block w-100" href="#" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'G+ ya no existe', icon: 'error'} )}><span className="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
-            <div className="col-sm-6"><a className="btn btn-outline-facebook btn-sm d-block w-100" href="#" onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'El componente ya no funciona', icon: 'error'} )}><span className="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
+            <div className="col-sm-6"><button className="btn btn-outline-google-plus btn-sm d-block w-100"  onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'G+ ya no existe', icon: 'error'} )}><span className="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</button></div>
+            <div className="col-sm-6"><button className="btn btn-outline-facebook btn-sm d-block w-100"  onClick={() => ShowAlert({title: 'Lo Sentimos', text: 'El componente ya no funciona', icon: 'error'} )}><span className="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</button></div>
             </div>
           </div>
           </div>

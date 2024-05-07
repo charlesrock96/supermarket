@@ -51,8 +51,8 @@ const Login = () => {
             <div className="bg-holder bg-auth-card-shape" style={divStyle}>
             </div>
 
-            <div className="z-1 position-relative"><span className="link-light mb-4 font-sans-serif fs-5 d-inline-block fw-bolder">falcon</span>
-            <p className="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
+            <div className="z-1 position-relative"><span className="link-light mb-4 font-sans-serif fs-5 d-inline-block fw-bolder">SuperMarket</span>
+            <p className="opacity-75 text-white">Donde tus necesidades encuentran su hogar.</p>
             </div>
           </div>
           <div className="mt-3 mb-4 mt-md-4 mb-md-5" data-bs-theme="light"> 

@@ -23,7 +23,7 @@ export default function MenuPrincipal() {
           <button className="btn btn-link navbar-brand me-1 me-sm-3" >
             <div className="d-flex align-items-center">
               <img className="me-2" src="/assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" />
-              <span className="font-sans-serif text-primary">falcon</span>
+              <span className="font-sans-serif text-primary">SuperMarket</span>
             </div>
           </button>
           <div className="collapse navbar-collapse scrollbar" id="navbarStandard">
